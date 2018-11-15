@@ -10,8 +10,10 @@ antv-f2的react-native实现
 一、
 ```
 yarn add react-native-f2
+yarn add -D babel-preset-env babel-plugin-transform-remove-strict-mode
 或
 npm i -S react-native-f2
+npm i -D babel-preset-env babel-plugin-transform-remove-strict-mode
 ```
 
 二、添加如下代码到.babelrc
