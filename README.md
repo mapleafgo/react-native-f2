@@ -2,16 +2,30 @@
 antv-f2的react-native实现
 
 ## 文档：
+当前使用的是官方3.1.x的版本，因为3.2后升级了babel，与ReactNative不兼容
 文档请看官方的[docs](https://antv.alipay.com/zh-cn/f2/3.x/index.html)
 
 ## 使用示例：
-安装
+### 安装：
+一、
 ```
 yarn add react-native-f2
 或
 npm i -S react-native-f2
 ```
 
+二、添加如下代码到.babelrc
+```
+{
+  "presets": ["react-native"],
+  "plugins": [
+    "transform-remove-strict-mode",
+    ...
+  ]
+}
+```
+
+### 实例：
 ```js
 import F2, { F2Canvas } from 'react-native-f2';
 
