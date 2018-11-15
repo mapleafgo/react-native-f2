@@ -5,6 +5,13 @@ antv-f2的react-native实现
 文档请看官方的[docs](https://antv.alipay.com/zh-cn/f2/3.x/index.html)
 
 ## 使用示例：
+安装
+```
+yarn add react-native-f2
+或
+npm i -S react-native-f2
+```
+
 ```js
 import F2, { F2Canvas } from 'react-native-f2';
 
