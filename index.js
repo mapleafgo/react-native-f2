@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, PanResponder, NativeAppEventEmitter, View, ViewPropTypes } from "react-native";
+import { Dimensions, PanResponder, NativeAppEventEmitter, View } from "react-native";
 import Canvas from "react-native-canvas";
 import F2 from '@antv/f2';
 
@@ -25,11 +25,7 @@ F2.Util.createEvent = function (event, chart) {
 
 export default F2;
 
-type IProps = {
-  ViewPropTypes
-};
-
-export class F2Canvas extends React.Component<IProps> {
+export class F2Canvas extends React.Component {
   UNSAFE_componentWillMount() {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
