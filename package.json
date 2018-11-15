@@ -1,0 +1,16 @@
+{
+  "name": "react-native-f2",
+  "version": "0.0.1",
+  "description": "native f2",
+  "main": "index.js",
+  "repository": "git@github.com:fanlide/react-native-f2.git",
+  "author": "慕枫 <javakang@qq.com>",
+  "license": "GPLv3",
+  "dependencies": {
+    "@antv/f2": "~3.1.21",
+    "react-native-canvas": "^0.1.24"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-remove-strict-mode": "^0.0.2"
+  }
+}
