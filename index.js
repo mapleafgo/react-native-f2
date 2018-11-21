@@ -1,31 +1,50 @@
 import React from 'react';
-import { Dimensions, PanResponder, NativeAppEventEmitter, View } from "react-native";
+import { Dimensions, PanResponder, NativeAppEventEmitter, View, ViewPropTypes } from "react-native";
 import Canvas from "react-native-canvas";
 import F2 from '@antv/f2';
+import uuid from 'uuid';
 
-F2.Util.isBrowser = false;
+/**
+ * ReactNative F2
+ *
+ * @author 慕枫
+ * @date 2018-11-21
+ * @export
+ * @class F2Canvas
+ * @extends {React.Component}
+ */
 
-F2.Util.addEventListener = function (source, type, listener) {
-  NativeAppEventEmitter.addListener(type, listener);
+type props = {
+  ...ViewPropTypes
 };
 
-F2.Util.removeEventListener = function (source, type, listener) {
-  NativeAppEventEmitter.removeListener(type, listener);
-};
+export default class F2Canvas extends React.Component<props> {
+  id = uuid.v4();
+  F2 = F2;
 
-F2.Util.createEvent = function (event, chart) {
-  const { locationX, locationY } = event;
-  return {
-    chart,
-    native: event,
-    x: locationX,
-    y: locationY
-  };
-};
+  constructor(props) {
+    super(props);
+    this.F2.Util.measureText = str => { return { width: str.length * 6 } };
 
-export default F2;
+    this.F2.Util.addEventListener = (source, type, listener) => {
+      NativeAppEventEmitter.addListener(this.id + type, listener);
+    };
 
-export class F2Canvas extends React.Component {
+    this.F2.Util.removeEventListener = (source, type, listener) => {
+      NativeAppEventEmitter.removeListener(this.id + type, listener);
+    };
+
+    this.F2.Util.createEvent = (event, chart) => {
+      const { locationX, locationY } = event;
+      return {
+        chart,
+        native: event,
+        x: locationX,
+        y: locationY
+      };
+    };
+  }
+
   UNSAFE_componentWillMount() {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -35,19 +54,19 @@ export class F2Canvas extends React.Component {
       onPanResponderTerminationRequest: () => true,
 
       onPanResponderGrant: ({ nativeEvent }) => {
-        NativeAppEventEmitter.emit("touchstart", nativeEvent)
+        NativeAppEventEmitter.emit(`${this.id}touchstart`, nativeEvent)
       },
       onPanResponderMove: ({ nativeEvent }) => {
-        NativeAppEventEmitter.emit("touchmove", nativeEvent)
+        NativeAppEventEmitter.emit(`${this.id}touchmove`, nativeEvent)
       },
       onPanResponderRelease: ({ nativeEvent }) => {
-        NativeAppEventEmitter.emit("press", nativeEvent)
+        NativeAppEventEmitter.emit(`${this.id}press`, nativeEvent)
       },
       onPanResponderEnd: ({ nativeEvent }) => {
-        NativeAppEventEmitter.emit("touchend", nativeEvent)
+        NativeAppEventEmitter.emit(`${this.id}touchend"`, nativeEvent)
       },
       onPanResponderTerminate: ({ nativeEvent }) => {
-        NativeAppEventEmitter.emit("touchend", nativeEvent)
+        NativeAppEventEmitter.emit(`${this.id}touchend`, nativeEvent)
       },
       onShouldBlockNativeResponder: () => true,
     });

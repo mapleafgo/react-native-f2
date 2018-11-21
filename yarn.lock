@@ -2,13 +2,25 @@
 # yarn lockfile v1
 
 
-"@antv/f2@~3.1.21":
-  version "3.1.21"
-  resolved "http://registry.npm.taobao.org/@antv/f2/download/@antv/f2-3.1.21.tgz#912713ad33c1f2b530f308902d4e35b645f2f909"
-  integrity sha1-kScTrTPB8rUw8wiQLU41tkXy+Qk=
+"@antv/f2@~3.1.22":
+  version "3.1.22"
+  resolved "http://registry.npm.taobao.org/@antv/f2/download/@antv/f2-3.1.22.tgz#2fb9f72c05ab0b4a78d6ad02ca768a498b03db83"
+  integrity sha1-L7n3LAWrC0p41q0CynaKSYsD24M=
   dependencies:
     fecha "~2.3.1"
     hammerjs "^2.0.8"
+
+"@types/node@*":
+  version "10.12.9"
+  resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-10.12.9.tgz#a07bfa74331471e1dc22a47eb72026843f7b95c8"
+  integrity sha1-oHv6dDMUceHcIqR+tyAmhD97lcg=
+
+"@types/uuid@^3.4.4":
+  version "3.4.4"
+  resolved "http://registry.npm.taobao.org/@types/uuid/download/@types/uuid-3.4.4.tgz#7af69360fa65ef0decb41fd150bf4ca5c0cefdf5"
+  integrity sha1-evaTYPpl7w3stB/RUL9MpcDO/fU=
+  dependencies:
+    "@types/node" "*"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -666,3 +678,8 @@ to-fast-properties@^1.0.3:
   version "1.0.3"
   resolved "http://registry.npm.taobao.org/to-fast-properties/download/to-fast-properties-1.0.3.tgz#b83571fa4d8c25b82e231b06e3a3055de4ca1a47"
   integrity sha1-uDVx+k2MJbguIxsG46MFXeTKGkc=
+
+uuid@^3.3.2:
+  version "3.3.2"
+  resolved "http://registry.npm.taobao.org/uuid/download/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+  integrity sha1-G0r0lV6zB3xQHCOHL8ZROBFYcTE=

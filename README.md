@@ -29,7 +29,7 @@ npm i -D babel-preset-env babel-plugin-transform-remove-strict-mode
 
 ### 实例：
 ```js
-import F2, { F2Canvas } from 'react-native-f2';
+import F2Canvas from 'react-native-f2';
 
 const width = Dimensions.get("window").width;
 
@@ -46,6 +46,7 @@ class Demo extends Component {
       { year: '1962', sales: 38 },
     ];
     //TODO: 宽高必须指定
+    const F2 = this.$canvas.F2;
     const chart = new F2.Chart({
       el: this.$canvas.getCanvas(),
       width,
