@@ -1,6 +1,6 @@
 {
   "name": "react-native-f2",
-  "version": "0.0.4",
+  "version": "1.0.1-beta",
   "description": "native f2",
   "main": "index.js",
   "repository": "git@github.com:fanlide/react-native-f2.git",
@@ -11,9 +11,7 @@
     "babel-preset-env": "^1.7.0"
   },
   "dependencies": {
-    "@antv/f2": "~3.1.22",
-    "@types/uuid": "^3.4.4",
-    "react-native-canvas": "^0.1.24",
-    "uuid": "^3.3.2"
+    "@antv/f2": "^3.3.0",
+    "react-native-gcanvas": "^0.0.7-dev"
   }
 }
