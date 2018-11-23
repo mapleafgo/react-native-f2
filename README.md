@@ -1,9 +1,10 @@
 # react-native-f2
 antv-f2的react-native实现
 
-**使用此插件，请先安装[GCanvas](https://alibaba.github.io/GCanvas/docs/Integrate GCanvas on ReactNative.html)***该插件的Android版有很多坑，可以看下示例*
+**使用此插件，请先安装[GCanvas](https://alibaba.github.io/GCanvas)** *该插件的Android版有很多坑，可以看下示例*
 
 [Demo](https://gitee.com/365t/react-native-f2demo)
+![效果图](./image.png)
 
 ## 文档：
 文档请看官方的[docs](https://antv.alipay.com/zh-cn/f2/3.x/index.html)
